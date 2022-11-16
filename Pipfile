@@ -12,6 +12,7 @@ aiohttp = "*"
 requests = "*"
 psycopg2-binary = "*"
 python-decouple = "*"
+httpx = "*"
 
 [dev-packages]
 black = "*"
@@ -19,6 +20,7 @@ flake8 = "*"
 isort = "*"
 pytest = "*"
 pytest-watch = "*"
+mypy = "*"
 
 [requires]
 python_version = "3.11"
