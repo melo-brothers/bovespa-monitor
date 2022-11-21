@@ -1,16 +1,16 @@
 from datetime import date, timedelta
 
-from decouple import config
 from fastapi import APIRouter
-from requests import get
+from httpx import get
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from database.models import User
+from settings import DATABASE_URL_SYNC
 
 sync_router = APIRouter(prefix="/sync")
 
-engine = create_engine(config("DATABASE_URL_SYNC"))
+engine = create_engine(DATABASE_URL_SYNC)
 SessionLocal = sessionmaker(bind=engine)
 
 

@@ -13,6 +13,7 @@ requests = "*"
 psycopg2-binary = "*"
 python-decouple = "*"
 httpx = "*"
+databases = "*"
 
 [dev-packages]
 black = "*"

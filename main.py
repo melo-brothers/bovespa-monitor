@@ -1,10 +1,19 @@
 from fastapi import APIRouter, FastAPI
 
+from database.connection import sessionmaker
 from views import assets_router, user_router
 from views_sync import sync_router
 
 app = FastAPI()
 router = APIRouter()
+
+
+async def get_db():
+    db = sessionmaker()
+    try:
+        yield db
+    finally:
+        db.close()
 
 
 @router.get("/")
